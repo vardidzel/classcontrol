@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jquery</title>
+</head>
+<style type="text/css">
+	.cube {
+		width:100px;
+		height:100px;
+		background: #fff;
+		display:inline-block;
+	}
+	body {
+		background:#000;
+	}
+	.active {
+		padding:20px;
+		background-color:red;
+	}
+</style>
+<body>
+<div class="cube"></div>
+<div class="cube"></div>
+<div class="cube"></div><br>
+<button class="button">Click me</button>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script type="text/javascript">
+	var $el = $(".cube"),
+    x = 1000;
+
+$(".button").on("click", function(){
+	var n = 0;
+	$el.addClass('active');
+	var interval = setInterval(function(){
+		n++;
+		if($el.hasClass('active')){
+			$el.removeClass('active');
+		}
+		else{
+			$el.addClass('active');
+		}
+		if(n>4){
+			clearInterval(interval);
+			$el.removeClass('active');
+		}
+	}, x);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		/*current = $el.css("background-color");
+		if (current == originalColor) {
+			$el.css("background-color", newcolor);
+		}
+		else{
+			$el.css("background-color", originalColor);
+		}
+		if(n>4){
+			clearInterval(interval);
+			$el.css("background-color", originalColor);
+		}*/
+</script>
+</body>
+</html>
